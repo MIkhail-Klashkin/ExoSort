@@ -10,8 +10,8 @@ namespace ExoSort
     class Program
     {
         static string fin = $@"{Directory.GetCurrentDirectory()}\fin.txt";
-        static uint length = 10;
-        static ulong count = 22;
+        static uint length = 100000;
+        static ulong count = 2200;
         static bool release = true;
         static async Task Main(string[] args)
         {
@@ -25,7 +25,7 @@ namespace ExoSort
             count = G.Count;
             Console.WriteLine($"Настройка завершена.\nПараметры файла:\nДлина строки: {length}\nКоличество строк: {count}");
             Console.WriteLine($"{DateTime.Now} - Запущена Генерация файла\nДлина строки: {length}\nКол-во строк: {count}");
-            G.GetFile(fin);
+            await G.GetFile(fin);
 
             if (fin.Contains("GetFileException"))
                 Console.WriteLine(fin);

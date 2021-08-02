@@ -57,7 +57,7 @@ namespace ExoSort
             Count = count;
         }
 
-        public async void GetFile(string path)
+        public async Task GetFile(string path)
         {
             string vocabulary = "qQwWeErRtTyYuUiIoOpPaAsSdDfFgGhHjJkKlLzZxXcCvVbBnNmM1234567890";
             int vocLength = vocabulary.Length;
@@ -77,7 +77,7 @@ namespace ExoSort
                         }
 
                         await sw.WriteLineAsync(text);
-
+                        System.Threading.Thread.Sleep(50);
                     }
                 }
             }
